@@ -1,0 +1,26 @@
+.message-error{
+	background: #df4848;
+	border: solid #ac2424 1px;
+    color: #fff;
+}
+
+.message-success{
+	background: #8BC34A;
+    border: solid #4CAF50 1px;
+    color: #fff;
+}
+
+.message{
+    max-width: 450px;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 15px;
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
