@@ -1,0 +1,88 @@
+.day {
+	display: inline-block;
+    border: solid #ccc 1px;
+    /*margin: 5px;*/
+    width: 14%;
+    height: 150px;
+    float: left;
+}
+
+.filler {
+	background: #e9e9e9;
+}
+
+.day-header {
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    border-bottom: solid #000 1px
+}
+
+.day-number {
+    position: absolute;
+    float: left;
+    margin-left: 5px;
+}
+
+.day-name {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+#current-month {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    padding: 10px;
+}
+
+.day-body {
+	display: table;
+    table-layout: fixed;
+    height: 114px;
+    width: 100%;
+}
+
+.activity {
+   display: table-row;
+}
+
+.activity-T {
+	background: #badc58;
+}
+
+.activity-M {
+	background: #f6e58d;
+}
+
+.activity-A {
+	background: #7ed6df;
+}
+
+.activity-title {
+	float: left;
+}
+
+.activity-time {
+	float: right;
+}
+
+.activity-type {
+	
+}
+
+.activity-owner {
+	
+}
+@media only screen and (max-width: 1000px) { 
+	.day {
+		display: inline-block;
+    	border: solid #ccc 1px;
+    	margin: 5px;
+    	width: 100%;
+    	height: 150px;
+    	float: left;
+	}
+
+}

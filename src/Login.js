@@ -40,14 +40,12 @@ class Login extends Component {
 	}
   	render() {
 
-  		let loading = this.state.success ? <div id='loader' className='center'><img className= 'center' src={loader}/></div> : null;
+  		let loading = this.state.success ? <div id='loader'><img className= 'center' src={loader} alt=''/></div> : null;
 
     return (
     	<div>
     		{loading}
       		<div id='login' className='center'>
-      			<div id='login-container' className='center'>
-
       				<label htmlFor='username'>Username</label>
       				<input id='username' name='username' type='text' onChange={this.setCredentials} onKeyPress={this.handleKeyPress}/>
 
@@ -55,7 +53,6 @@ class Login extends Component {
       				<input id='password' name='password' type='password' onChange={this.setCredentials} onKeyPress={this.handleKeyPress}/ >
 
       				<button onClick={this.validateAndLogin}>Login</button>
-      			</div>	
       		</div>
 			<Message messageType='error' messageText={this.state.error} /> 
 		</div>

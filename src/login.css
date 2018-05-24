@@ -9,18 +9,16 @@ label, button {
 }
 
 #login {
-	background: #f4f1f1;
     margin: 0 auto;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     height: 200px;
-    border: solid #ccc 1px;
 }
 
 input {
 	display: block;
 	margin-bottom: 5px;
-	width:100%;
+	width:98%;
 	border: solid #646464 1px;
 	height: 17px;
 	padding-left: 3px;
@@ -54,11 +52,10 @@ button {
 }
 
 #loader {
-	background: #f4f1f1;
     margin: 0 auto;
+    position: absolute;
     width: 100%;
-    max-width: 300px;
-    height: 200px;
-    border: solid #ccc 1px;
+    height: 100%;
     z-index: 2;
+    background: #fff;
 }
