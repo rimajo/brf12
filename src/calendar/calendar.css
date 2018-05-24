@@ -2,7 +2,7 @@
 	display: inline-block;
     border: solid #ccc 1px;
     /*margin: 5px;*/
-    width: 14%;
+    width: 14.07%;
     height: 150px;
     float: left;
 }
@@ -34,7 +34,6 @@
     width: 100%;
     max-width: 1200px;
     height: 100%;
-    padding: 10px;
 }
 
 .day-body {
@@ -46,43 +45,45 @@
 
 .activity {
    display: table-row;
+	 text-align: center;
 }
 
 .activity-T {
-	background: #badc58;
+	background: #db9833;
 }
 
 .activity-M {
-	background: #f6e58d;
+	background: #b8db33;
 }
 
 .activity-A {
-	background: #7ed6df;
-}
-
-.activity-title {
-	float: left;
+	background: #7e9a9a;
 }
 
 .activity-time {
-	float: right;
+	display: block;
+	vertical-align: middle;
 }
 
-.activity-type {
-	
+.activity-description {
+	width: 100%;
+	text-overflow: ellipsis;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden !important;
 }
-
-.activity-owner {
-	
-}
-@media only screen and (max-width: 1000px) { 
+@media only screen and (max-width: 930px) {
 	.day {
 		display: inline-block;
-    	border: solid #ccc 1px;
-    	margin: 5px;
-    	width: 100%;
-    	height: 150px;
-    	float: left;
+		border:none;
+    border-bottom: solid #000 1px;
+		width: 100%;
+		height: 150px;
+    float: left;
+	}
+
+	.filler {
+		display: none;
 	}
 
 }

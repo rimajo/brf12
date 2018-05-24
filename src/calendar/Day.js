@@ -9,19 +9,20 @@ class Day extends Component {
     this.state = this.getInitialActivities();
   }
 
+  //just for mockind data as there is no database connection yet
   getInitialActivities = () => {
     let option = Math.floor(Math.random() * 4);
 
     switch(option) {
     case 1:
-      return {activeties: [{startTime: '17:10', title: 'Möte', type: 'M', owner: 'Mia'}]};
+      return {activeties: [{startTime: '17:10', title: 'Bollagstämma', type: 'M', owner: 'Mia'}]};
     case 2:
       return {activeties: [{startTime: '16:00', type: 'T', owner: 'Magnus'}, {startTime: '18:00', title: 'Möte', type: 'M', owner: 'David'}]};
     case 3:
-      return {activeties: [{startTime: '', type: 'T', owner: 'Rickard'}, {startTime: '19:00', title: 'Möte', type: 'M', owner: 'Magnus'}, {startTime: '20:00', title: 'Aktivitet', type: 'A', owner: 'David'}]};
+      return {activeties: [{startTime: '', type: 'T', owner: 'Rickard'}, {startTime: '19:00', title: 'Möte', type: 'M', owner: 'Magnus'}, {startTime: '20:00', title: 'Byta ut köket i källaren', type: 'A', owner: 'David'}]};
     default:
       return {activeties: []};
-    }   
+    }
   }
 
   getDayName = () => {
@@ -42,18 +43,19 @@ class Day extends Component {
       return <div className={`day ${this.props.type}`}></div>
     }
 
-    return( 
+    return(
       <div className='day'>
         <div className='day-header'>
           <span className='day-number'>{this.props.dayNumber}</span>
           <span className='day-name'>{this.getDayName()}</span>
         </div>
         <div className='day-body'>
-        {this.state.activeties.map(function(activity){         
+        {this.state.activeties.map(function(activity){
             return <Activity title={activity.title} type={activity.type} time={activity.startTime} owner={activity.owner} />;
           })}
-        </div>  
-      </div>)
+        </div>
+      </div>
+    )
   }
 
   render() {

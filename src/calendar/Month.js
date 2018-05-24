@@ -10,19 +10,20 @@ class Month extends Component {
   }
 
   getInitialDate = () => {
-    let today = new Date();
-
-    let currentDay   = today.getDate();
-    let year         = today.getFullYear();
-    let month        = today.getMonth()+4;
+    let date         = new Date();
+    let today        = date.getDate();
+    let year         = date.getFullYear();
+    let month        = date.getMonth()+4;
     let numberOfDays = new Date(year, month+1, 0).getDate();
     let startDay     = new Date(year, month, 1).getDay();
+    let lastDay      = new Date(year, month, numberOfDays).getDay();
 
     return ({
        numberOfDays: numberOfDays,
-       currentDay: currentDay,
+       currentDay: today,
        currentMonth: month,
-       startDay: startDay
+       startDay: startDay,
+       lastDay: lastDay
     });
   }
 
@@ -33,7 +34,7 @@ class Month extends Component {
     return dayNumber;
   }
 
-  getFillerDays = () => {
+  getFillerDaysStart = () => {
     let fillerDays = [];
 
     for (var i = 0; i < this.state.startDay; i++) {
@@ -42,16 +43,31 @@ class Month extends Component {
     return fillerDays;
   }
 
-  render() {
-    let fillerDays  = this.getFillerDays();
+  getFillerDaysEnd = () => {
+    let fillerDays = [];
+
+    for (var i = this.state.lastDay; i < 6; i++) {
+      fillerDays.push(<Day type='filler'/>);
+    }
+    return fillerDays;
+  }
+
+  getDays = () => {
     let days = [];
+
     for (var i = 0; i < this.state.numberOfDays; i++) {
       days.push(<Day key={i} dayNumber={i+1} dayNameIndex={this.getDayNameIndex(this.state.startDay+i)}/>);
     }
+    return days;
+  }
+
+  render() {
+
     return (
-        <div id='current-month' className='center'> 
-          {fillerDays}
-          {days}        
+        <div id='current-month' className='center'>
+          {this.getFillerDaysStart()}
+          {this.getDays()}
+          {this.getFillerDaysEnd()}
         </div>
     );
   }
