@@ -27,27 +27,32 @@ class Day extends Component {
 
   getDayName = () => {
     let weekday = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
+      "Söndag",
+      "Måndag",
+      "Tisdag",
+      "Onsdag",
+      "Torsdag",
+      "Fredag",
+      "Lördag"
     ];
     return weekday[this.props.dayNameIndex];
   }
 
   getDayType = () => {
     if (this.props.type === 'filler') {
-      return <div className={`day ${this.props.type}`}></div>
+      return (<div className={`day ${this.props.type}`}>
+         <div className='day-header'>
+          <span className='day-number'>{this.props.dayNumber}</span>
+        </div>
+      </div>
+      );
     }
 
     return(
       <div className='day'>
         <div className='day-header'>
-          <span className='day-number'>{this.props.dayNumber}</span>
-          <span className='day-name'>{this.getDayName()}</span>
+          <span className={`day-number ${this.props.day}`}>{this.props.dayNumber}</span>
+          <span className='day-name-small'>{this.getDayName()}</span>
         </div>
         <div className='day-body'>
         {this.state.activeties.map(function(activity){
@@ -55,7 +60,7 @@ class Day extends Component {
           })}
         </div>
       </div>
-    )
+    );
   }
 
   render() {

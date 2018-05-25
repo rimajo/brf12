@@ -1,9 +1,7 @@
 .day {
 	display: inline-block;
     border: solid #ccc 1px;
-    /*margin: 5px;*/
-    width: 14.07%;
-    height: 150px;
+    width: calc(14.58% - 8px);    height: 150px;
     float: left;
 }
 
@@ -25,53 +23,40 @@
 }
 
 .day-name {
-    width: 100%;
+    width: 14.07%;
     float: left;
     text-align: center;
 }
 
-#current-month {
+.today {
+    background: #f0ae37;
+    border-radius: 17px;
+    padding: 3px;
+}
+
+.day-name-small {
+    display: none;
+}
+
+#month {
     width: 100%;
-    max-width: 1200px;
     height: 100%;
+    /*max-width: 1200px;*/
+    /*display: contents;*/
+}
+
+#month-navigation {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .day-body {
 	display: table;
     table-layout: fixed;
     height: 114px;
-    width: 100%;
+    width: calc(100% + 1px);
 }
 
-.activity {
-   display: table-row;
-	 text-align: center;
-}
-
-.activity-T {
-	background: #db9833;
-}
-
-.activity-M {
-	background: #b8db33;
-}
-
-.activity-A {
-	background: #7e9a9a;
-}
-
-.activity-time {
-	display: block;
-	vertical-align: middle;
-}
-
-.activity-description {
-	width: 100%;
-	text-overflow: ellipsis;
-	display: block;
-	white-space: nowrap;
-	overflow: hidden !important;
-}
 @media only screen and (max-width: 930px) {
 	.day {
 		display: inline-block;
@@ -86,4 +71,17 @@
 		display: none;
 	}
 
+    .day-name-small{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .day-name{
+        display: none;
+    }
+
+    .day-body{
+        width: 100%;
+    }
 }
